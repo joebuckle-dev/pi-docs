@@ -223,8 +223,11 @@ if (!$authenticated) {
     </header>
 
     <main>
-        <div style="background: white; border-radius: 8px; padding: 30px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-            <h2 style="margin-top: 0;">Documentation</h2>
+        <div style="background: white; border-radius: 8px; padding: 24px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2 style="margin: 0;">Documentation</h2>
+                <input type="text" id="docSearch" placeholder="Search docs..." style="padding: 8px 12px; border: 1px solid #ddd; border-radius: 4px; width: 250px;">
+            </div>
 
             <?php 
             require_once 'includes/sections.php';
@@ -262,7 +265,7 @@ if (!$authenticated) {
 
             /* Parent items (Media Monitor, Display for Region) */
             .tree li.tree-parent {
-                margin: 10px 0 6px 20px;
+                margin: 8px 0 4px 20px; /* Reduced spacing */
             }
 
             .tree li.tree-parent > a {
@@ -270,7 +273,7 @@ if (!$authenticated) {
                 font-size: 14px;
                 color: #007bff;
                 background: #f8f9fa;
-                padding: 8px 12px;
+                padding: 6px 10px; /* Smaller padding */
                 border-radius: 5px;
                 border-left: 3px solid #007bff;
                 text-decoration: none;
@@ -343,16 +346,34 @@ if (!$authenticated) {
             }
 
             .tree small {
-                display: block;
+                display: inline-block;
                 color: #6c757d;
                 font-size: 11px;
-                margin-top: 2px;
-                font-style: italic;
+                margin-left: 8px;
+                font-style: normal;
                 font-weight: normal;
+                opacity: 0.8;
             }
         </style>
     </main>
 
     <?php require_once 'includes/footer.php'; ?>
+    
+    <script>
+        // Simple search functionality
+        document.getElementById('docSearch').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const treeParents = document.querySelectorAll('.tree-parent');
+            
+            treeParents.forEach(function(parent) {
+                const text = parent.textContent.toLowerCase();
+                if (text.includes(searchTerm) || searchTerm === '') {
+                    parent.style.display = '';
+                } else {
+                    parent.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

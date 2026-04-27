@@ -202,9 +202,28 @@
             margin: 20px 0; border-left: 4px solid #28a745; 
         }
         
-        .warning { 
-            background: #fff3cd; padding: 15px; border-radius: 8px; 
-            border-left: 4px solid #ffc107; margin: 20px 0; 
+        .warning {
+            background: #fff3cd; padding: 15px; border-radius: 8px;
+            border-left: 4px solid #ffc107; margin: 20px 0;
+        }
+
+        /* Screenshots and figures */
+        .doc-screenshot {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .doc-screenshot img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #dee2e6;
+            border-radius: 6px;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+        }
+        .doc-screenshot figcaption {
+            margin-top: 8px;
+            font-size: 13px;
+            color: #6c757d;
+            font-style: italic;
         }
         
         /* Responsive design */
@@ -235,9 +254,65 @@
         
         table {
             width: 100%;
-            table-layout: fixed;
-            word-wrap: break-word;
+            border-collapse: collapse;
+            margin: 20px 0;
             font-size: 13px;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            overflow: hidden;
+        }
+        
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 2px solid #dee2e6;
+            color: #495057;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        
+        tr:last-child td {
+            border-bottom: none;
+        }
+        
+        tr:hover {
+            background-color: #f8f9fa;
+        }
+        
+        /* Code in tables */
+        td code, th code {
+            background-color: #f3f4f6;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 12px;
+            color: #d73a49;
+        }
+        
+        /* Strong text in tables */
+        td strong {
+            color: #212529;
+            font-weight: 600;
+        }
+        
+        /* First column emphasis */
+        td:first-child {
+            font-weight: 500;
+        }
+        
+        /* Responsive tables */
+        @media (max-width: 768px) {
+            table {
+                font-size: 12px;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
         }
         
         p, ul li, ol li {

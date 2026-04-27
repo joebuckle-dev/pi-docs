@@ -1,70 +1,67 @@
-<?php 
-$page_title = 'Media Monitor Help';
-$last_updated = 'March 17, 2026';
-require_once '../../includes/header.php'; 
-require_once '../../includes/navigation.php';
+<?php
+require_once '../../includes/templates.php';
 
-// Set up navigation for this section
-require_once 'media-monitor/_nav.php';
-?>
+// Define key features
+$features = [
+    ['title' => 'URL Validation', 'description' => 'Automatic checking for duplicate URLs'],
+    ['title' => 'Access Control', 'description' => 'Integration with subscription plans'],
+    ['title' => 'Search Integration', 'description' => 'Find media items quickly'],
+    ['title' => 'Categorisation', 'description' => 'Organise content with taxonomies']
+];
 
-<div class="doc-layout">
-    <?php render_doc_nav($nav_items, 'overview', 'Media Monitor', '../../'); ?>
-    
-    <div class="doc-content">
-        <h1>Media Monitor Help</h1>
+// Build content
+$content = '
+<h2>Overview</h2>
+<p>Media Monitor is a custom post type designed for tracking media mentions and external content. Each post can include:</p>
+<ul>
+    <li>Title and description</li>
+    <li>External URL (with duplicate checking)</li>
+    <li>Categories and tags for organisation</li>
+    <li>Publishing date and author</li>
+</ul>
 
-        <div class="highlight">
-            <h2>What is Media Monitor?</h2>
-            <p>A system for tracking and managing external media content within the Admin Panel.</p>
-        </div>
+<h2>Key Features</h2>
+<ul>
+' . implode("\n", array_map(function($f) {
+    return "    <li><strong>{$f['title']}</strong>: {$f['description']}</li>";
+}, $features)) . '
+</ul>
 
-        <h2>Overview</h2>
-        <p>Media Monitor is a custom post type designed for tracking media mentions and external content. Each post can include:</p>
-        <ul>
-            <li>Title and description</li>
-            <li>External URL (with duplicate checking)</li>
-            <li>Categories and tags for organisation</li>
-            <li>Publishing date and author</li>
-        </ul>
+' . render_info_box('Getting Started', '
+<ol>
+    <li>Navigate to <strong>Media Monitor</strong> in the Admin Panel menu</li>
+    <li>Click <strong>Add New</strong> to create a new media monitor post</li>
+    <li>Fill in the required fields and check your URL</li>
+    <li>Categorise and publish your post</li>
+</ol>
+', 'feature-box') . '
 
-        <h2>Key Features</h2>
-        <ul>
-            <li><strong>URL Validation</strong>: Automatic checking for duplicate URLs</li>
-            <li><strong>Access Control</strong>: Integration with subscription plans</li>
-            <li><strong>Search Integration</strong>: Find media items quickly</li>
-            <li><strong>Categorisation</strong>: Organise content with taxonomies</li>
-        </ul>
+<h2>Common Tasks</h2>
 
-        <div class="feature-box">
-            <h3>Getting Started</h3>
-            <ol>
-                <li>Navigate to <strong>Media Monitor</strong> in the Admin Panel menu</li>
-                <li>Click <strong>Add New</strong> to create a new media monitor post</li>
-                <li>Fill in the required fields and check your URL</li>
-                <li>Categorise and publish your post</li>
-            </ol>
-        </div>
+<h3>Creating a New Media Monitor Post</h3>
+<ol>
+    <li>Go to Media Monitor → Add New</li>
+    <li>Enter a descriptive title</li>
+    <li>Add the external URL</li>
+    <li>Click "Check" to verify the URL is not a duplicate</li>
+    <li>Add description and categories</li>
+    <li>Publish when ready</li>
+</ol>
 
-        <h2>Common Tasks</h2>
-        
-        <h3>Creating a New Media Monitor Post</h3>
-        <ol>
-            <li>Go to Media Monitor → Add New</li>
-            <li>Enter a descriptive title</li>
-            <li>Add the external URL</li>
-            <li>Click "Check" to verify the URL is not a duplicate</li>
-            <li>Add description and categories</li>
-            <li>Publish when ready</li>
-        </ol>
+<h3>Managing Existing Posts</h3>
+<ul>
+    <li>Use the search box to find specific posts</li>
+    <li>Filter by category or date</li>
+    <li>Bulk actions for multiple posts</li>
+</ul>';
 
-        <h3>Managing Existing Posts</h3>
-        <ul>
-            <li>Use the search box to find specific posts</li>
-            <li>Filter by category or date</li>
-            <li>Bulk actions for multiple posts</li>
-        </ul>
-    </div>
-</div>
-
-<?php require_once '../../includes/footer.php'; ?>
+// Render the page
+render_doc_page([
+    'title' => 'Media Monitor Help',
+    'section' => 'media-monitor',
+    'current_page' => 'overview',
+    'nav_title' => 'Media Monitor',
+    'intro' => 'A system for tracking and managing external media content within the Admin Panel.',
+    'content' => $content,
+    'last_updated' => 'March 17, 2026'
+]);

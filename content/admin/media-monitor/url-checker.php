@@ -1,19 +1,7 @@
-<?php 
-$page_title = 'Media Monitor URL Checker - Help';
-$last_updated = 'March 17, 2026';
-require_once '../../../includes/header.php'; 
-require_once '../../../includes/navigation.php';
+<?php
+require_once '../../../includes/templates.php';
 
-// Set up navigation for this section
-require_once '_nav.php';
-?>
-
-<div class="doc-layout">
-    <?php render_doc_nav($nav_items, 'url-checker', 'Media Monitor', '../../../'); ?>
-    
-    <div class="doc-content">
-        <h1>Media Monitor URL Checker</h1>
-
+$content = <<<'HTML'
 <h2>What does it do?</h2>
 <p>The URL checker makes sure you don't accidentally use the same URL twice in Media Monitor.</p>
 
@@ -59,7 +47,13 @@ require_once '_nav.php';
 
 <h3>I get a warning when I publish</h3>
 <p>The system checks again when you publish. If you see a warning, check if someone else published the same URL while you were editing.</p>
-    </div>
-</div>
+HTML;
 
-<?php require_once '../../../includes/footer.php'; ?>
+render_doc_page([
+    'title' => 'Media Monitor URL Checker',
+    'section' => 'media-monitor',
+    'current_page' => 'url-checker',
+    'nav_title' => 'Media Monitor',
+    'content' => $content,
+    'last_updated' => 'March 17, 2026'
+]);
