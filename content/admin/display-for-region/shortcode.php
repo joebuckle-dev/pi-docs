@@ -3,7 +3,7 @@ require_once '../../../includes/templates.php';
 
 $content = <<<'HTML'
 <h2>How to Use It</h2>
-<p>Use this simple shortcode to wrap your content:</p>
+<p>Use this shortcode to wrap your content:</p>
 HTML;
 
 $content .= render_info_box(
@@ -16,13 +16,13 @@ Your content here
 
 $content .= <<<'HTML'
 
-<h2>Two Simple Rules:</h2>
+<h2>Attributes</h2>
 <ol>
     <li><strong>locations</strong> - Which countries should see this content</li>
     <li><strong>exclude</strong> - Which countries should NOT see it (optional)</li>
 </ol>
 
-<h2>Copy & Paste Examples</h2>
+<h2>Examples</h2>
 
 <h3>Show to One Country</h3>
 <pre><code>[display-for-region locations="GB"]

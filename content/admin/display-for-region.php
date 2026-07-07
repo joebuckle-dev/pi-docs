@@ -5,8 +5,8 @@ $content = <<<'HTML'
 HTML;
 
 $content .= render_info_box(
-    'What does this feature do?',
-    '<p>It shows different content to people from different countries.</p>
+    'What this feature does',
+    '<p>It shows different content to visitors from different countries.</p>
     <p><strong>Example:</strong> Show UK pricing to UK visitors, EU pricing to EU visitors, etc.</p>',
     'highlight'
 );
@@ -35,10 +35,10 @@ $content .= <<<'HTML'
     <li><strong>Country Detection</strong>: Automatic visitor location identification</li>
     <li><strong>Region Support</strong>: Target entire regions (Europe, Asia, etc.)</li>
     <li><strong>Flexible Rules</strong>: Include or exclude specific countries</li>
-    <li><strong>Simple Shortcode</strong>: Easy to use in any post or page</li>
+    <li><strong>Shortcode</strong>: Usable in any post or page</li>
 </ul>
 
-<h2>Quick Example</h2>
+<h2>Example</h2>
 <pre><code>[display-for-region locations="GB"]
 Price: £99
 [/display-for-region]

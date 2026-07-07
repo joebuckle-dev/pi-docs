@@ -7,11 +7,11 @@ $content = <<<'HTML'
 
 <h3>Key Components</h3>
 <ul>
-    <li><code>wp-content/plugins/pi-transactional/pi-transactional.php</code> &mdash; Plugin bootstrap and admin menu registration</li>
-    <li><code>wp-content/plugins/pi-transactional/admin/pages/template-editor.php</code> &mdash; Admin page wrapper, asset enqueuing</li>
-    <li><code>wp-content/plugins/pi-transactional/admin/templates/template-editor.php</code> &mdash; Editor markup and POST handlers (load, update, send test)</li>
-    <li><code>wp-content/plugins/pi-transactional/admin/templates/template-editor.js</code> &mdash; Front-end behaviour: template switching, unsaved-changes warning, AJAX save and test send</li>
-    <li><code>PolicingInsight\Transactional</code> class &mdash; Wrapper around the Mandrill API used by the editor and by other plugins (such as Subscriptions) to send transactional emails</li>
+    <li><code>wp-content/plugins/pi-transactional/pi-transactional.php</code>: Plugin bootstrap and admin menu registration</li>
+    <li><code>wp-content/plugins/pi-transactional/admin/pages/template-editor.php</code>: Admin page wrapper, asset enqueuing</li>
+    <li><code>wp-content/plugins/pi-transactional/admin/templates/template-editor.php</code>: Editor markup and POST handlers (load, update, send test)</li>
+    <li><code>wp-content/plugins/pi-transactional/admin/templates/template-editor.js</code>: Front-end behaviour: template switching, unsaved-changes warning, AJAX save and test send</li>
+    <li><code>PolicingInsight\Transactional</code> class: Wrapper around the Mandrill API used by the editor and by other plugins (such as Subscriptions) to send transactional emails</li>
 </ul>
 
 <h2>Editor Flow</h2>
@@ -44,13 +44,13 @@ $content .= <<<'HTML'
 
 <h2>Debugging</h2>
 <ul>
-    <li><code>/tmp/pi-form-debug.log</code> &mdash; Raw POST data and JSON-decoding output for the test email form</li>
-    <li>WordPress debug log &mdash; Errors raised by the <code>Transactional</code> class (template list failures, Mandrill API errors)</li>
+    <li><code>/tmp/pi-form-debug.log</code>: Raw POST data and JSON-decoding output for the test email form</li>
+    <li>WordPress debug log: Errors raised by the <code>Transactional</code> class (template list failures, Mandrill API errors)</li>
 </ul>
 
 <h2>Related Documentation</h2>
 <ul>
-    <li><a href="../pi-subscriptions/webhook-testing.php">Subscriptions &rarr; Webhook Testing</a> &mdash; Subscription emails are dispatched through this feature using template slugs such as <code>subscription-renewal-notice-card-valid</code></li>
+    <li><a href="../pi-subscriptions/webhook-testing.php">Subscriptions &rarr; Webhook Testing</a>: Subscription emails are dispatched through this feature using template slugs such as <code>subscription-renewal-notice-card-valid</code></li>
 </ul>
 HTML;
 

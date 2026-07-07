@@ -63,12 +63,12 @@ $content = render_info_box('Quick Summary', '
 <h3>HTML Content</h3>
 <p>The main body of the email. The editor offers two views, accessible via the tabs in the top-right corner:</p>
 <ul>
-    <li><strong>Visual</strong> &mdash; a familiar word-processor-style editor with controls for paragraph styles, bold, italic, underline, alignment, lists, links, images, font family, font size and full-screen editing.</li>
-    <li><strong>Code</strong> &mdash; the raw HTML, useful for fine-grained adjustments and for pasting in HTML supplied by a designer.</li>
+    <li><strong>Visual</strong>: a familiar word-processor-style editor with controls for paragraph styles, bold, italic, underline, alignment, lists, links, images, font family, font size and full-screen editing.</li>
+    <li><strong>Code</strong>: the raw HTML, useful for fine-grained adjustments and for pasting in HTML supplied by a designer.</li>
 </ul>
 
 ' . render_info_box('Merge Tags', '
-<p>Personalised values are written using double curly braces, for example <code>{{FIRST_NAME}}</code> and <code>{{LAST_NAME}}</code>. These are replaced with the recipient\'s details when the email is sent. Keep the curly braces and the variable name exactly as they are &mdash; any change will stop the merge tag working.</p>
+<p>Personalised values are written using double curly braces, for example <code>{{FIRST_NAME}}</code> and <code>{{LAST_NAME}}</code>. These are replaced with the recipient\'s details when the email is sent. Keep the curly braces and the variable name exactly as they are. Any change will stop the merge tag working.</p>
 ', 'highlight') . '
 
 <h3>Text Version</h3>
@@ -84,7 +84,7 @@ $content = render_info_box('Quick Summary', '
 <h2>Common Issues</h2>
 
 <ul>
-    <li><strong>Changes are not appearing in test emails?</strong> Make sure you clicked <strong>Update Template</strong> and saw the green success message. Browser caches and email previews can show stale content &mdash; send a fresh test email.</li>
+    <li><strong>Changes are not appearing in test emails?</strong> Make sure you clicked <strong>Update Template</strong> and saw the green success message. Browser caches and email previews can show stale content. Send a fresh test email.</li>
     <li><strong>A merge tag is showing as <code>{{FIRST_NAME}}</code> in the delivered email?</strong> Double-check the spelling and that the curly braces are doubled. Single braces or extra spaces will prevent the substitution.</li>
     <li><strong>Layout looks broken in the recipient\'s inbox?</strong> Switch to the <strong>Code</strong> view and check the HTML for unclosed tags or missing inline styles. Some email clients ignore CSS that is not inline.</li>
 </ul>

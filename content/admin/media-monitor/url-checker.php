@@ -3,7 +3,7 @@ require_once '../../../includes/templates.php';
 
 $content = <<<'HTML'
 <h2>What does it do?</h2>
-<p>The URL checker makes sure you don't accidentally use the same URL twice in Media Monitor.</p>
+<p>The URL checker prevents the same URL being used more than once in Media Monitor.</p>
 
 <h2>How to use it</h2>
 <ol>
@@ -15,22 +15,22 @@ $content = <<<'HTML'
 <h2>What the colors mean</h2>
 
 <div class="alert-box alert-success">
-    <h3>✅ GREEN = Good to go!</h3>
+    <h3>✅ GREEN = Available</h3>
     <p>The URL is available. You can save your post.</p>
 </div>
 
 <div class="alert-box alert-warning">
-    <h3>⚠️ AMBER = Check first</h3>
-    <p>Someone saved this URL in a draft. Click the link to see if it's:</p>
+    <h3>⚠️ AMBER = In a draft</h3>
+    <p>This URL exists in a draft post. Open the link to determine whether it is:</p>
     <ul>
         <li>An old draft that can be deleted</li>
-        <li>Someone else working on the same story</li>
+        <li>Another editor working on the same story</li>
     </ul>
 </div>
 
 <div class="alert-box alert-error">
-    <h3>❌ RED = Already used!</h3>
-    <p>This URL is already published. You should:</p>
+    <h3>❌ RED = Already published</h3>
+    <p>This URL is already published. Options:</p>
     <ul>
         <li>Use a different URL, or</li>
         <li>Edit the existing post instead</li>
@@ -40,7 +40,7 @@ $content = <<<'HTML'
 <h2>Common situations</h2>
 
 <h3>I'm editing a post and it shows green</h3>
-<p>That's correct! The system knows you're editing and the URL belongs to this post.</p>
+<p>When editing an existing post, the system recognises that the URL belongs to the current post.</p>
 
 <h3>The Check button doesn't work</h3>
 <p>Try refreshing the page. If it still doesn't work, contact support.</p>

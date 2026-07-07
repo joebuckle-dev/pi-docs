@@ -10,7 +10,18 @@ if (isset($_POST['password'])) {
     if ($_POST['password'] === PASSWORD) {
         $_SESSION['authenticated'] = true;
         $_SESSION['auth_time'] = time();
-        header('Location: ' . $_SERVER['PHP_SELF']);
+
+        // Return the user to the page they originally tried to reach, if any
+        $dest = $_SERVER['PHP_SELF']; // default: landing page
+        if (!empty($_SESSION['redirect_after_login'])) {
+            $candidate = $_SESSION['redirect_after_login'];
+            // Only allow local /docs/ paths. Reject protocol-relative (//) and absolute URLs
+            if (strpos($candidate, '/docs/') === 0 && strpos($candidate, '//') !== 0) {
+                $dest = $candidate;
+            }
+            unset($_SESSION['redirect_after_login']);
+        }
+        header('Location: ' . $dest);
         exit;
     } else {
         $error = 'Incorrect password. Please try again.';
@@ -255,7 +266,7 @@ if (!$authenticated) {
                 margin: 6px 0;
             }
 
-            /* Section headers (🎛️ Admin Features) */
+            /* Section headers (✍️ Content Management, ⚙️ Site Operations) */
             .tree > ul > li {
                 font-size: 16px;
                 font-weight: 600;

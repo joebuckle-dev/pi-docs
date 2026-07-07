@@ -1,9 +1,9 @@
 <?php
 // Documentation sections configuration
 $documentation_sections = [
-    'admin' => [
-        'icon' => '🎛️',
-        'title' => 'Admin Features',
+    'content-management' => [
+        'icon' => '✍️',
+        'title' => 'Content Management',
         'items' => [
             'media-monitor' => [
                 'title' => 'Media Monitor',
@@ -48,6 +48,48 @@ $documentation_sections = [
                         'title' => 'Developer Notes',
                         'url' => '/docs/content/admin/display-for-region/developer-notes.php',
                         'description' => 'Technical implementation details'
+                    ]
+                ]
+            ],
+            'pi-youtube' => [
+                'title' => 'YouTube Embed',
+                'url' => '/docs/content/admin/pi-youtube.php',
+                'description' => 'Embed responsive YouTube videos with the pi-youtube shortcode',
+                'icon' => '📺',
+                'subitems' => [
+                    'shortcode' => [
+                        'title' => 'Shortcode Usage',
+                        'url' => '/docs/content/admin/pi-youtube/shortcode.php',
+                        'description' => 'How to embed a video (no sizing needed, keeps 16:9)'
+                    ]
+                ]
+            ]
+        ]
+    ],
+    'site-operations' => [
+        'icon' => '⚙️',
+        'title' => 'Site Operations',
+        'items' => [
+            'stats' => [
+                'title' => 'Stats',
+                'url' => '/docs/content/admin/stats.php',
+                'description' => 'View counts, popular posts and tracking comparison',
+                'icon' => '📊',
+                'subitems' => [
+                    'popular-posts' => [
+                        'title' => 'Popular Posts',
+                        'url' => '/docs/content/admin/stats/popular-posts.php',
+                        'description' => 'Most viewed, commented, trending and all-time'
+                    ],
+                    'tracking-vs-popular-posts' => [
+                        'title' => 'Tracking vs Popular Posts',
+                        'url' => '/docs/content/admin/stats/tracking-vs-popular-posts.php',
+                        'description' => 'Compare pi-track and Popular Posts view counts'
+                    ],
+                    'google-analytics' => [
+                        'title' => 'Google Analytics comparison',
+                        'url' => '/docs/content/admin/stats/google-analytics.php',
+                        'description' => 'Why GA differs from Popular Posts, and how bots are handled'
                     ]
                 ]
             ],

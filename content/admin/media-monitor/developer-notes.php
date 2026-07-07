@@ -39,7 +39,7 @@ AND pm.meta_value = %s
 AND p.ID != %d
 AND p.ID != %d</code></pre>
 
-<h4>Performance Optimizations</h4>
+<h4>Performance Optimisations</h4>
 <ul>
     <li><strong>Autosave Exclusion:</strong> Filters out WordPress autosaves to prevent false positives</li>
     <li><strong>Revision Filtering:</strong> Excludes post revisions from duplicate checks</li>
@@ -247,7 +247,7 @@ return $result;</code></pre>
 <h3>Common Issues</h3>
 <ul>
     <li><strong>False Positives:</strong> Usually caused by autosaves, fixed in current implementation</li>
-    <li><strong>Performance Issues:</strong> Check database indexes and query optimization</li>
+    <li><strong>Performance Issues:</strong> Check database indexes and query optimisation</li>
     <li><strong>Cross-site Sync Failures:</strong> Verify network connectivity and permissions</li>
     <li><strong>AJAX Failures:</strong> Check JavaScript console and server logs</li>
 </ul>

@@ -2,12 +2,12 @@
 require_once '../../../includes/templates.php';
 
 $content = render_info_box('Quick Test', '
-<p>Just go to <strong>Subscriptions (NEW) → Webhook Testing</strong> and click the test buttons. That\'s it.</p>
+<p>Go to <strong>Subscriptions (NEW) → Webhook Testing</strong> and click the test buttons.</p>
 ', 'highlight') . '
 
 <h2>Testing Webhooks</h2>
 
-<p>We\'ve got a simple admin interface for testing the webhook emails. Use it to make sure renewal reminders and payment notifications are working.</p>
+<p>The admin interface tests the webhook emails. Use it to verify that renewal reminders and payment notifications are working.</p>
 
 <h3>What You Can Test</h3>
 <ul>
@@ -33,7 +33,7 @@ $content = render_info_box('Quick Test', '
 
 <h3>⭐ New: Real Webhook Testing (Recommended)</h3>
 
-<p>We\'ve added a complete workflow that tests <strong>real webhook delivery</strong> using Stripe CLI. This gives you confidence your webhooks will work in production.</p>
+<p>A complete workflow tests <strong>real webhook delivery</strong> using Stripe CLI. It verifies that webhooks will work in production.</p>
 
 ' . render_info_box('Webhook Secret Handling', '
 <p>The testing workflow automatically handles webhook secrets:</p>
@@ -173,7 +173,7 @@ stripe trigger invoice.upcoming                             # Terminal 2', 'bash
     <li>Copy webhook secret to WordPress Stripe settings</li>
 </ol>
 
-<p>That\'s it. The admin interface is the easiest way to test. Use the CLI commands if you need to automate testing or test specific scenarios.</p>
+<p>The admin interface is the simplest way to test. Use the CLI commands to automate testing or to test specific scenarios.</p>
 ';
 
 render_doc_page([

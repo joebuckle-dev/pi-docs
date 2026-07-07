@@ -19,6 +19,10 @@ if (isset($_SESSION['authenticated']) && $_SESSION['authenticated'] === true) {
 
 // If not authenticated, redirect to login
 if (!$authenticated) {
+    // Remember where the user was trying to go so we can return them there after login
+    if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'GET') {
+        $_SESSION['redirect_after_login'] = $_SERVER['REQUEST_URI'];
+    }
     header('Location: /docs/index.php');
     exit;
 }
