@@ -25,7 +25,12 @@ $content = '
     <li><strong>Show</strong>: how many entries to list (Top 10 up to Top 100).</li>
     <li><strong>Min hits</strong>: hide posts below this many views (0 = show all). This also trims the Daily overview to days with qualifying activity.</li>
     <li><strong>Published from / Published to</strong>: restrict to content <em>published</em> within these dates, independent of the view window (for excluding old archive content).</li>
+    <li><strong>Segment</strong>: filter the view counts by the viewer&rsquo;s subscription segment at the moment they viewed. <em>All traffic</em> (the default) is unchanged. The other choices are <em>Logged in (all users)</em>, <em>Logged in - Registered (no sub)</em>, <em>Logged in - Org sub</em>, <em>Logged in - Individual (Paid)</em>, <em>Logged in - Individual (FREE)</em> and <em>Logged out only</em>. This control only appears in Popular&nbsp;Posts mode (not Google&nbsp;Analytics mode).</li>
 </ul>
+
+' . render_info_box('About the Segment filter', '
+<p>When you pick a segment, the view counts switch to a separate, <strong>human-only</strong> source that records each view stamped with the viewer&rsquo;s segment as it was at that moment (later tier changes never re-bucket old views). Because that source is <strong>captured going forward</strong> &mdash; from when the feature was enabled &mdash; it holds <strong>no history</strong> and will <strong>not</strong> match the <em>All traffic</em> totals, which keep the full Popular&nbsp;Posts history. A note appears on screen whenever a segment is active to remind you of this. <em>All traffic</em> continues to behave exactly as before.</p>
+', 'highlight') . '
 
 <h2>Daily overview</h2>
 <p>A bar-per-day chart of activity across the selected range, newest day first. Only days that had activity are listed (empty days are omitted), so a long or sparse range doesn\'t show a wall of zeros.</p>

@@ -111,6 +111,29 @@ $documentation_sections = [
                     ]
                 ]
             ],
+            'pi-events' => [
+                'title' => 'Event Registration',
+                'url' => '/docs/content/admin/pi-events.php',
+                'description' => 'Webinar and event registration forms',
+                'icon' => '🎟️',
+                'subitems' => [
+                    'creating-events' => [
+                        'title' => 'Creating Events',
+                        'url' => '/docs/content/admin/pi-events/creating-events.php',
+                        'description' => 'Set up a new event and its landing page'
+                    ],
+                    'managing-registrations' => [
+                        'title' => 'Managing Registrations',
+                        'url' => '/docs/content/admin/pi-events/managing-registrations.php',
+                        'description' => 'View registrations, CSV export and marketing list statuses'
+                    ],
+                    'developer-notes' => [
+                        'title' => 'Developer Notes',
+                        'url' => '/docs/content/admin/pi-events/developer-notes.php',
+                        'description' => 'Technical implementation details'
+                    ]
+                ]
+            ],
             'pi-transactional' => [
                 'title' => 'Transactional Emails',
                 'url' => '/docs/content/admin/pi-transactional.php',

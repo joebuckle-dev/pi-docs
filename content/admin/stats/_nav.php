@@ -14,7 +14,8 @@ if ($is_overview) {
         ['id' => 'overview', 'title' => 'Overview', 'url' => 'stats.php'],
         ['id' => 'popular-posts', 'title' => 'Popular Posts', 'url' => 'stats/popular-posts.php'],
         ['id' => 'tracking-vs-popular-posts', 'title' => 'Tracking vs Popular Posts', 'url' => 'stats/tracking-vs-popular-posts.php'],
-        ['id' => 'google-analytics', 'title' => 'Google Analytics comparison', 'url' => 'stats/google-analytics.php']
+        ['id' => 'google-analytics', 'title' => 'Google Analytics comparison', 'url' => 'stats/google-analytics.php'],
+        ['id' => 'developer-notes', 'title' => 'Developer notes', 'url' => 'stats/developer-notes.php']
     ];
 } else {
     // Navigation from subpages
@@ -22,7 +23,8 @@ if ($is_overview) {
         ['id' => 'overview', 'title' => 'Overview', 'url' => '../stats.php'],
         ['id' => 'popular-posts', 'title' => 'Popular Posts', 'url' => 'popular-posts.php'],
         ['id' => 'tracking-vs-popular-posts', 'title' => 'Tracking vs Popular Posts', 'url' => 'tracking-vs-popular-posts.php'],
-        ['id' => 'google-analytics', 'title' => 'Google Analytics comparison', 'url' => 'google-analytics.php']
+        ['id' => 'google-analytics', 'title' => 'Google Analytics comparison', 'url' => 'google-analytics.php'],
+        ['id' => 'developer-notes', 'title' => 'Developer notes', 'url' => 'developer-notes.php']
     ];
 }
 ?>
