@@ -7,7 +7,7 @@ $content = '
 <ol>
     <li>In Mailchimp, create the audience <strong>PI/PTV Event Marketing</strong>.</li>
     <li>Copy its Audience ID (Audience &rarr; Settings &rarr; Audience name and defaults) into <strong>Event marketing Mailchimp list ID</strong>.</li>
-    <li>Create the standard marketing database notice template (for example <code>event-marketing-database-notice</code>) in the <a href="../pi-transactional/editing-templates.php">Template Editor</a> and select it as the <strong>Marketing notice template</strong>. Suggested content:</li>
+    <li>Create the standard marketing database notice template (for example <code>event-marketing-database-notice</code>) in the <a href="../pi-transactional/editing-templates.php">Template Editor</a> and select it as the <strong>Marketing database notice email template</strong>. Suggested content:</li>
 </ol>
 ' . render_code_block('You have been added to the Policing Insight and PolicingTV event invitational
 database so you can be invited to future events.
@@ -17,8 +17,14 @@ notified of future events.', 'text') . '
 <p>Make sure the unsubscribe link in the marketing notice template is excluded from Mandrill click-tracking, otherwise the link is rewritten and the signed URL may be followed by scanners.</p>
 ', 'warning') . '
 <ol start="4">
-    <li>Optionally select an <strong>Unsubscribe page</strong>: the page a person is redirected to after confirming an unsubscribe. If left empty, a standard confirmation page is shown.</li>
+    <li>Optionally select an <strong>Unsubscribe confirmation page</strong>: the page a person is redirected to after confirming an unsubscribe. If left empty, a standard confirmation message is shown.</li>
 </ol>
+
+<figure class="doc-screenshot">
+    <img src="images/event-settings-screen.png" alt="Registration Settings screen showing the Event marketing Mailchimp list ID field, the Marketing database notice email template dropdown with a View / edit this template link, and the searchable Unsubscribe confirmation page selector" />
+    <figcaption>Registration Settings: the Mailchimp list ID, the marketing database notice template and the optional unsubscribe confirmation page.</figcaption>
+</figure>
+
 <p>The Mailchimp API key is reused from <strong>Marketing Emails</strong> &rarr; <strong>Mailchimp Settings</strong>, and the Mandrill key from the Transactional Emails settings. No keys are entered in this feature.</p>
 
 <h2>Step 1: Create the Confirmation Email Template</h2>
@@ -43,21 +49,32 @@ notified of future events.', 'text') . '
 </ol>
 
 <h3>Event Fields</h3>
+
+<figure class="doc-screenshot">
+    <img src="images/event-edit-screen.png" alt="Event edit screen showing the Registration open toggle, Mandrill confirmation template dropdown, Skip marketing list toggle, Consent checkbox label, Success message editor, From name, From email and Email subject fields, with the Registrations table below" />
+    <figcaption>The event edit screen: registration settings at the top, with the event\'s Registrations table below.</figcaption>
+</figure>
+
 <h4>Required</h4>
 <ul>
-    <li><strong>Registration open</strong>: turn off to close registration without unpublishing the event.</li>
-    <li><strong>Mandrill template</strong>: the confirmation email template from Step 1. A searchable dropdown of Mandrill templates when the list can be fetched, a free text field otherwise. A "View / edit this template" link opens the template in the Template Editor.</li>
-    <li><strong>Consent label</strong>: the wording of the consent checkbox. Sponsor names vary per event, which is why this is set per event.</li>
+    <li><strong>Mandrill confirmation template</strong>: the confirmation email template from Step 1. A searchable dropdown of Mandrill templates when the list can be fetched, a free text field otherwise. A "View / edit this template" link opens the template in the Template Editor.</li>
+    <li><strong>Consent checkbox label</strong>: the wording shown next to the mandatory consent checkbox. Sponsor names vary per event, which is why this is set per event.</li>
 </ul>
 <h4>Optional</h4>
 <ul>
+    <li><strong>Registration open</strong>: on by default. When off, the form shortcode shows a "registration closed" message instead of the form, so registration can be closed without unpublishing the event.</li>
     <li><strong>Skip marketing list</strong>: registrants for this event are not added to the Mailchimp list.</li>
-    <li><strong>Success message</strong>: shown above the success content after registering.</li>
-    <li><strong>From name</strong>, <strong>From email</strong>, <strong>Subject</strong>: overrides for the confirmation email; the template defaults are used when empty.</li>
+    <li><strong>Success message</strong>: shown after a successful registration. Blank uses the default "Your submission was successful".</li>
+    <li><strong>From name</strong>, <strong>From email</strong>, <strong>Email subject</strong>: overrides for the confirmation email; blank uses the Mandrill template defaults.</li>
 </ul>
 
 <h2>Step 3: Build the Landing Page</h2>
-<p>Create the landing page and add the shortcodes. The <strong>Shortcode</strong> column in the Event Registrations list table shows the exact form shortcode for each event, ready to copy.</p>
+<p>Create the landing page and add the shortcodes. The <strong>Shortcode</strong> column in the Event Registrations list table shows the exact form shortcode for each event, ready to copy into a post or page.</p>
+
+<figure class="doc-screenshot">
+    <img src="images/event-list-screen.png" alt="Event Registrations list table with a Shortcode column showing the ready-to-copy form shortcode for each event" />
+    <figcaption>The Shortcode column shows the exact form shortcode to copy into the landing page.</figcaption>
+</figure>
 ' . render_code_block('[pi-event-form-hide-on-success event="sas-webinar-3"]
   ... event blurb shown before registering ...
 [/pi-event-form-hide-on-success]
